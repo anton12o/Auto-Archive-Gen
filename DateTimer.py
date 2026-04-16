@@ -9,19 +9,37 @@ _, mes_fim = calendar.monthrange(Hoje.year, Hoje.month)
 Fim = date(Hoje.year, Hoje.month, mes_fim)
 dia_atual = Hoje
 
-diretorio = input ("Digite o diretorio que deseja salvar os documentos: ")
+
+confirmado = False
+while not confirmado:
+
+    diretorio = input ("Digite o diretorio que deseja salvar os documentos: ")
+
+    topico_quantidade = int(input ("Quantos topicos deseja adicionar?"))
+
+    topicos = []
+    for i in range(topico_quantidade):
+        topico = input("Qual topico deseja adicionar?")  
+        topicos.append(topico)
+    print (f"\n---VALIDAÇÃO DE INFORMAÇÕES---\n")
+    print (f"Diretorio: {diretorio}")
+    print (f"Quantidade de tópicos: {topico_quantidade}")
+    print (f"Tópicos: {', '.join(topicos)}")
+
+    confirmar = input("\nConfirma os dados acima? (S/N)").upper()
+        
+    if confirmar == "S":
+            confirmado = True
+    else:
+            print ("\nEntendido, reiniciando sistema de escolha...\n")
+
 if not os.path.exists(diretorio):
     os.makedirs(diretorio)
     print(f"O diretorio não foi encontrado o diretorio em {diretorio} em uma primeira busca, porem agora esta criado em {diretorio} ")
 else:
     print(f"Diretorio {diretorio} localizado, continuando com o processo...")
 
-topico_quantidade = int(input ("Quantos topicos deseja adicionar?"))
 
-topicos = []
-for i in range(topico_quantidade):
-  topico = input("Qual topico deseja adicionar?")  
-  topicos.append(topico)
 while dia_atual <= Fim:
        nome_formatado = dia_atual.strftime ("%Y-%m-%d %A").capitalize()
        nome_arquivo = f"{nome_formatado}.md"
