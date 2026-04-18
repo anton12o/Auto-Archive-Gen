@@ -61,6 +61,7 @@ while not confirmado:
             confirmado = True
             break
         elif confirmar == "N":
+            dia_atual = Hoje
             print ("\nEntendido, reiniciando sistema de escolha...\n")
             break
         else:
