@@ -15,7 +15,13 @@ O Auto Archive Gen é um gerador de notas feito para resolver problemas do cotid
 
 ## Historico de atualizações lançadas
 
-### v1.5
+### v0.2.1
+- Limpar topicos/diretorio ao reiniciar	
+- Tratamento de locale falha	
+- Tratamento de erro no with open	
+- Correção de indentação	
+
+### v0.1.0
 - Locale automático pelo idioma da máquina
 - Pasta padrão "notas" quando diretório vazio
 - Proteção contra inputs inválidos no número de tópicos
@@ -25,14 +31,14 @@ O Auto Archive Gen é um gerador de notas feito para resolver problemas do cotid
 - Feedback de progresso ao adicionar tópicos
 - Validação de resposta S/N
 
-### v1.0
+### v0.0.1
 - Geração automática de arquivos .md do dia atual até fim do mês
 - Tópicos personalizáveis via input
 - Verificação de sobrescrita
 - Confirmação de dados antes de executar
 
-## Futuras atualizações
-- [ ] Suporte a `txt`, `pdf`, `xlsx`
-- [ ] Criação automática de pasta por mês
-- [ ] Interface gráfica
-- [ ] Exportar como `.exe`
+## Previsão de futura atualização
+- suporte a txt além de md 
+- Template de tópicos pré-definidos
+- Confirmação antes de criar pasta nova 
+- Abrir nota ou pasta após criação 
