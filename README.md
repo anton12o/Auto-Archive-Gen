@@ -17,7 +17,7 @@ O Auto Archive Gen é um gerador de notas feito para resolver problemas do cotid
 
 ### v0.2.1
 - Limpar topicos/diretorio ao reiniciar	
-- Tratamento de locale falha	
+- Tratamento de locale caso haja falha	
 - Tratamento de erro no with open	
 - Correção de indentação	
 
