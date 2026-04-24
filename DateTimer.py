@@ -25,7 +25,7 @@ while not confirmado:
         )
 
     try:
-        if not os.path.exists(diretorio):
+        if not os.path.isdir(diretorio):
             os.makedirs(diretorio)
             print(
                 f"O diretorio não foi encontrado o diretorio em {diretorio} em uma primeira busca, porem agora esta criado em {diretorio} "
@@ -55,14 +55,14 @@ while not confirmado:
     for i in range(topico_quantidade):
         while True:
             topico = input("Qual topico deseja adicionar?")
-            if topico == "":
+            if not topico.strip():
                 print("Valor vazio, por favor ensira um valor valido")
             else:
                 topicos.append(topico)
                 print(f"O topico {i+1} de {topico_quantidade} adicionado")
                 print("\nSeguindo com a execução do programa\n")
                 break
-    print(f"\n---VALIDAÇÃO DE INFORMAÇÕES---\n")
+    print("\n---VALIDAÇÃO DE INFORMAÇÕES---\n")
     print(f"Diretorio: {diretorio}")
     print(f"Quantidade de tópicos: {topico_quantidade}")
     print(f"Tópicos: {', '.join(topicos)}")
@@ -73,16 +73,13 @@ while not confirmado:
             confirmado = True
             break
         elif confirmar == "N":
-            dia_atual = Hoje
-            topicos = []
-            diretorio = ""
             print("\nEntendido, reiniciando sistema de escolha...\n")
             break
         else:
             print("Resposta invalida, por favor digite S ou N para responder")
 
 while dia_atual <= Fim:
-    nome_formatado = dia_atual.strftime("%Y-%m-%d %A").capitalize()
+    nome_formatado = dia_atual.strftime("%Y-%m-%d %A").title()
     nome_arquivo = f"{nome_formatado}.md"
     caminho_total = os.path.join(diretorio, nome_arquivo)
     if not os.path.exists(caminho_total):
