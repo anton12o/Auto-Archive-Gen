@@ -56,7 +56,7 @@ while not confirmado:
         while True:
             topico = input("Qual topico deseja adicionar?")
             if not topico.strip():
-                print("Valor vazio, por favor ensira um valor valido")
+                print("Valor vazio, por favor insira um valor valido")
             else:
                 topicos.append(topico)
                 print(f"O topico {i+1} de {topico_quantidade} adicionado")
