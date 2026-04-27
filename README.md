@@ -15,6 +15,10 @@ O Auto Archive Gen é um gerador de notas feito para resolver problemas do cotid
 
 ## Historico de atualizações lançadas
 
+## v.0.2.5
+- Adicionado limite de caracteres
+- Correção de espaçamento 
+
 ## v0.2.4
 - Trocado exists () por isdir()
 - Trocado .capitalize por .title() para abranger string completa
