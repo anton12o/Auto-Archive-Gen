@@ -18,11 +18,13 @@ confirmado = False
 while not confirmado:
 
     diretorio = input("Digite o diretorio que deseja salvar os documentos: ")
+    if len (diretorio) > 300:
+        print("Caminho muito longo, por favor usar no maximo 300 caracteres")
+        continue
     if diretorio == "":
         diretorio = os.path.join(os.getcwd(), "notas")
         print(
-            f"Foi dado continuidade ao programa sem especificar o diretorio, então foi criado uma pasta notas no diretorio {diretorio}"
-        )
+            f"Foi dado continuidade ao programa sem especificar o diretorio, então foi criado uma pasta notas no diretorio {diretorio}")
 
     try:
         if not os.path.isdir(diretorio):
@@ -57,6 +59,8 @@ while not confirmado:
             topico = input("Qual topico deseja adicionar?")
             if not topico.strip():
                 print("Valor vazio, por favor insira um valor valido")
+            elif len (topico) > 150:
+                print("Caminho longo demais, por favor respeitar o limite de 150 caracteres")
             else:
                 topicos.append(topico)
                 print(f"O topico {i+1} de {topico_quantidade} adicionado")
@@ -86,7 +90,7 @@ while dia_atual <= Fim:
         try:
             with open(caminho_total, "w", encoding="utf-8") as f:
                 for topico in topicos:
-                    f.write(f"\n\n\n##{topico}:\n\n\n")
+                    f.write(f"\n\n\n## {topico}:\n\n\n")
             print(f"Topicos adicionados ao arquivo {nome_arquivo}")
         except OSError:
             print(f"Houve um erro, não foi possivel criar um arquivo")
