@@ -15,6 +15,16 @@ O Auto Archive Gen é um gerador de notas feito para resolver problemas do cotid
 
 ## Historico de atualizações lançadas
 
+### v0.3.0
+- Suporte a formato txt além de md
+- Confirmação antes de criar pasta
+- Pergunta se deseja abrir a pasta após criação
+- Suporte cross-platform para abrir pasta (Windows, Mac, Linux)
+- Verificação de pastas do sistema (impede criar em pastas críticas)
+- Limite de caracteres para diretório (300) e tópicos (150)
+- Ordenação das validações de diretório corrigida
+- Reset de variáveis ao reiniciar ciclo
+
 ## v.0.2.5
 - Adicionado limite de caracteres
 - Correção de espaçamento 
